@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72D32B52-D36D-4AE2-9167-BADB0450D326}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FUT15_JOB</RootNamespace>
+    <AssemblyName>FUT15_JOB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\FUT15Entities_PS3.cs" />
+    <Compile Include="Models\FUT15Entities_PS4.cs" />
+    <Compile Include="Models\FUT15Entities_XBox360.cs" />
+    <Compile Include="Models\FUT15Entities_XBoxOne.cs" />
+    <Compile Include="Models\FUT15EntityFactory.cs" />
+    <Compile Include="Models\JobUserAccount.cs" />
+    <Compile Include="Models\logging.cs" />
+    <Compile Include="Models\SaleTracker.cs" />
+    <Compile Include="Models\TradeConfiguration.cs" />
+    <Compile Include="Models\WatchListQueue.cs" />
+    <Compile Include="Trade_JOB.cs" />
+    <Compile Include="FUT15Configs.cs" />
+    <Compile Include="Models\FUT15Entities.cs" />
+    <Compile Include="Models\FUTClientFacade.cs" />
+    <Compile Include="Models\FUT15Entities_PC.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\SalePrice.cs" />
+    <Compile Include="Models\TargetBidInfo.cs" />
+    <Compile Include="Models\TargetBidInfo_Enhanced.cs" />
+    <Compile Include="Models\TradeTime.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FIFA-Ultimate-Team-2015-Toolkit-0.3.0.0\UltimateTeam.Toolkit\UltimateTeam.Toolkit.csproj">
+      <Project>{4a396eba-0b7d-41e2-9088-fb3c40efa76f}</Project>
+      <Name>UltimateTeam.Toolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FUT15_Center\FUT15_Center.csproj">
+      <Project>{a87a9a40-8c9a-48ef-86bc-35d2c52b9831}</Project>
+      <Name>FUT15_Center</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MailReader\MailReader.csproj">
+      <Project>{510c7c4b-21b5-4265-bc25-0608fb747588}</Project>
+      <Name>MailReader</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

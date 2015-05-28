@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FUT15_JOB.Models
+{
+    public class TradeTime
+    {
+        public int Id { get; set; }
+        public long Trade_Id { get; set; }
+        public DateTime Transaction_Time { get; set; }
+    }
+}
